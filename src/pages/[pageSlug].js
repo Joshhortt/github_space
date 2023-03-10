@@ -14,7 +14,7 @@ export default function Page({ page }) {
   return (
     <Layout>
       <Head>
-        <title>{ page.title } - Space Jelly</title>
+        <title>{ page.title } - Github Space</title>
         <meta name="description" content={page.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>

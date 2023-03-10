@@ -1,44 +1,50 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
 
-import { getPosts } from '@lib/posts';
+import { getPosts } from "@lib/posts";
 
-import Layout from '@components/Layout';
-import Container from '@components/Container';
+import Layout from "@components/Layout";
+import Container from "@components/Container";
 
-import styles from '@styles/Home.module.scss'
+import styles from "@styles/Home.module.scss";
 
 export default function Home({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>Space Jelly</title>
-        <meta name="description" content="Cosmic web dev tutorials that will shock you with joy!" />
+        <title>Github Space</title>
+        <meta
+          name="description"
+          content="Github dev tutorials that will teach you stuff!"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container>
-        <h1 className={styles.title}>
-          Space Jelly
-        </h1>
+        <h1 className={styles.title}>Github Space</h1>
 
         <p className={styles.subtitle}>
-          Cosmic web dev tutorials that will shock you with joy!
+          Github dev tutorials that will teach you stuff!
         </p>
 
         <h2 className={styles.heading}>Latest Posts</h2>
 
         <ul className={styles.posts}>
-          {posts.map(post => {
+          {posts.map((post) => {
             return (
               <li key={post.slug}>
                 <a href={`/posts/${post.slug}`}>
-                  <h3 className={styles.postTitle}>{ post.title }</h3>
-                  <p className={styles.postDate}>{ new Date(post.date).toDateString() }</p>
-                  <div className={styles.postExcerpt} dangerouslySetInnerHTML={{ __html: post.excerpt }} />
+                  <h3 className={styles.postTitle}>{post.title}</h3>
+                  <p className={styles.postDate}>
+                    {new Date(post.date).toDateString()}
+                  </p>
+                  <div
+                    className={styles.postExcerpt}
+                    dangerouslySetInnerHTML={{ __html: post.excerpt }}
+                  />
                 </a>
               </li>
-            )
+            );
           })}
         </ul>
 
@@ -64,16 +70,15 @@ export default function Home({ posts }) {
           </div>
         </div>
       </Container>
-
     </Layout>
-  )
+  );
 }
 
 export async function getStaticProps() {
   const posts = await getPosts();
   return {
     props: {
-      posts: posts.slice(0,5)
-    }
-  }
+      posts: posts.slice(0, 5),
+    },
+  };
 }
