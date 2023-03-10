@@ -3,16 +3,14 @@
 }
 
 .title {
-
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 900;
   line-height: 1.15;
   margin: 0 0 1rem;
 
   @media (max-width: 720px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-
 }
 
 .heading {
@@ -23,33 +21,27 @@
 .postDate {
   font-size: 1.2em;
   color: gray;
-  margin: .6em 0;
+  margin: 0.6em 0;
 }
 
 .postCategories {
-
   list-style: none;
   padding: 0;
   margin: 0;
 
   li {
-
     display: inline;
 
     &:after {
-      content: ', '
+      content: ", ";
     }
 
     &:last-child {
-
       &:after {
-        content: ''
+        content: "";
       }
-
     }
-
   }
-
 }
 
 .footer {

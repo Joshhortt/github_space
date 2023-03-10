@@ -14,7 +14,7 @@ export default function Newsletter() {
   return (
     <Layout>
       <Head>
-        <title>Newsletter - Github Space</title>
+        <title>Newsletter - GitHub Space</title>
         <meta name="description" content="Sign up for my newsletter!" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

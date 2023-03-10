@@ -1,8 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import Container from '@components/Container';
+import Container from "@components/Container";
 
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
       <Container className={styles.headerContainer}>
         <p className={styles.headerTitle}>
           <Link href="/">
-            <a>Github Space</a>
+            <a>GitHub Space</a>
           </Link>
         </p>
         <ul className={styles.headerLinks}>
@@ -27,7 +27,7 @@ const Header = () => {
         </ul>
       </Container>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

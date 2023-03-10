@@ -1,60 +1,53 @@
-import Head from "next/head";
-import Link from "next/link";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkHtml from "remark-html";
+import Head from 'next/head';
+import Link from 'next/link';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkHtml from 'remark-html';
 
-import { getPosts } from "@lib/posts";
+import { getPosts } from '@lib/posts';
 
-import Layout from "@components/Layout";
-import Container from "@components/Container";
+import Layout from '@components/Layout';
+import Container from '@components/Container';
 
-import styles from "@styles/Post.module.scss";
+import styles from '@styles/Post.module.scss'
 
 export default function Post({ post }) {
   return (
     <Layout>
       <Head>
-        <title>{post.title} - Github Space</title>
-        <meta
-          name="description"
-          content={`Learn more about ${post.title} on Space Jelly`}
-        />
+        <title>{ post.title } - GitHub Space</title>
+        <meta name="description" content={`Learn more about ${post.title} on GitHub Space`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container>
         <header className={styles.header}>
-          <h1 className={styles.title}>{post.title}</h1>
+          <h1 className={styles.title}>{ post.title }</h1>
 
-          <p className={styles.postDate}>
-            {new Date(post.date).toDateString()}
-          </p>
+          <p className={styles.postDate}>{ new Date(post.date).toDateString() }</p>
 
           <ul className={styles.postCategories}>
-            {post.categories.map((category) => {
-              return <li key={category}>{category}</li>;
+            {post.categories.map(category => {
+              return (
+                <li key={category}>{ category }</li>
+              )
             })}
           </ul>
         </header>
 
-        <div
-          dangerouslySetInnerHTML={{
-            __html: post.html,
-          }}
-        />
+        <div dangerouslySetInnerHTML={{
+          __html: post.html
+        }} />
 
         <footer className={styles.footer}>
           <p>
-            <Link href="/newsletter">
-              <a>Sign up for our newsletter</a>
-            </Link>{" "}
-            to get the latest posts straight to your inbox!
+            <Link href="/newsletter"><a>Sign up for our newsletter</a></Link> to get the latest posts straight to your inbox!
           </p>
         </footer>
       </Container>
+
     </Layout>
-  );
+  )
 }
 
 export async function getStaticProps({ params }) {
@@ -64,31 +57,31 @@ export async function getStaticProps({ params }) {
   const content = await unified()
     .use(remarkParse)
     .use(remarkHtml)
-    .process(post.content);
+    .process(post.content)
 
   return {
     props: {
       post: {
         ...post,
-        html: content.value,
-      },
-    },
-  };
+        html: content.value
+      }
+    }
+  }
 }
 
 export async function getStaticPaths() {
   const posts = await getPosts();
 
-  const paths = posts.map((post) => {
+  const paths = posts.map(post => {
     return {
       params: {
-        postSlug: post.slug,
-      },
-    };
+        postSlug: post.slug
+      }
+    }
   });
 
   return {
     paths,
-    fallback: false,
-  };
+    fallback: false
+  }
 }

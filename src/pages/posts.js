@@ -12,8 +12,8 @@ export default function Posts({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>Posts - Github Space</title>
-        <meta name="description" content="All posts on Github Space" />
+        <title>Posts - GitHub Space</title>
+        <meta name="description" content="All posts on GitHub Space" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

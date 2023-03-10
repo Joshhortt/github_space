@@ -12,19 +12,19 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <Head>
-        <title>Github Space</title>
+        <title>GitHub Space</title>
         <meta
           name="description"
-          content="Github dev tutorials that will teach you stuff!"
+          content="GitHub dev tutorials that will teach you stuff!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Container>
-        <h1 className={styles.title}>Github Space</h1>
+        <h1 className={styles.title}>Home</h1>
 
         <p className={styles.subtitle}>
-          Github dev tutorials that will teach you stuff!
+          GitHub dev tutorials that will teach you stuff!
         </p>
 
         <h2 className={styles.heading}>Latest Posts</h2>

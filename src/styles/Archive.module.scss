@@ -1,8 +1,7 @@
 @import "@styles/settings/__settings";
 
 .title {
-
-  color: $color-brand-purple;
+  color: #000000;
   font-size: 4.5rem;
   font-weight: bold;
   margin: 0 0 4rem;
@@ -10,7 +9,6 @@
   @media (max-width: 720px) {
     font-size: 2.5rem;
   }
-
 }
 
 .subtitle {
@@ -19,57 +17,47 @@
 }
 
 .heading {
-
   font-size: 3rem;
 
   @media (max-width: 720px) {
     font-size: 2rem;
   }
-
 }
 
 .posts {
-
   font-size: 1.2em;
   list-style: none;
   padding: 0;
   margin: 0;
 
   li {
-
     margin-bottom: 3em;
 
     &:last-child {
       margin-bottom: 0;
     }
-
   }
 
   a {
-
     color: inherit;
 
     &:hover {
-
       h3 {
-        color: #0070f3;
+        color: #dd4b36;
         text-decoration: underline;
       }
-
     }
-
   }
-
 }
 
 .postTitle {
   font-size: 1.4em;
   font-weight: 700;
-  margin-bottom: .4em;
+  margin-bottom: 0.4em;
 }
 
 .postDate {
-  font-size: .9em;
+  font-size: 0.9em;
   color: gray;
-  margin: .6em 0;
+  margin: 0.6em 0;
 }

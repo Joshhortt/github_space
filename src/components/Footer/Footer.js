@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 const Footer = ({ ...rest }) => {
   return (
     <footer className={styles.footer} {...rest}>
-      &copy; Github Space, {new Date().getFullYear()}
+      &copy; GitHub Space, Creative Ligtbox {new Date().getFullYear()}
     </footer>
   );
 };
