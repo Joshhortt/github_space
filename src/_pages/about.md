@@ -6,8 +6,5 @@ This is our GitHub Space, where you can find all things related to GitHub.
 
 Please read the articles by order
 
-<quillbot-extension-portal></quillbot-extension-portal>
+How to install Git Bash for Windows to your local system?
 
-<quillbot-extension-portal></quillbot-extension-portal>
-
-<quillbot-extension-portal></quillbot-extension-portal>
